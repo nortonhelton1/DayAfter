@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Simple Weather Map</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body onload="loadMap()">
+
+  <h1 id="headerForMap">Weather Map</h1>
+  <div id="map"></div>
+
+  <div>
+    <label id="mapLabel"><input type="checkbox" id="animateWeatherCheckBox"
+        onclick="refreshWeatherLayer(); setAnimateHelpTextVisibility();">Animate</label>
+  </div>
+  
+  <div>
+    <ul id="animateHelpText">
+      <li>Shows the last 2 hours in 5 minute intervals.</li>
+      <li>It might take a few cycles to fully load the images.</li>
+      <li>Uncheck this before moving or zooming the map.</li>
+    </ul>
+  </div>
+
+<!--Container for the weather information-->
+  <div class="container">
+    <div class="card text-center">
+      <div class="card-body" id="input">
+        <h1 class="card-title"></h1>
+        <p class="card-text"></p>
+        <input type="text" id="zipCode" placeholder="Enter City" />
+        <button type="button" class="btn btn-outline-info" id="addLocButton">ENTER</button>
+      </div>
+
+      <div class="card-footer text-muted">
+        <div id="info">
+          <!--Display Weather-->
+          <ul id="weather">
+
+          </ul>
+          <!--Display Severe Weather-->
+          <ul id="severe">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Giving Credits and Info-->
+  
+    <footer>
+      <div id="creditTo">
+        <ul>
+          <p>Credit and Info</p>
+          <li>Weather data from <a href="https://mesonet.agron.iastate.edu/ogc/">Iowa State University Mesonet</a>.</li>
+          <li>Live weather refreshes every 5 minutes.</li>
+          <li><a href="https://unsplash.com/photos/BqKdvJ8a5TI?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink">https://unsplash.com/photos/BqKdvJ8a5TI?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink</a></li>
+        </ul>
+        <ul>
+          <p>Prepare for Severe Weather</p>
+          <li><a href="https://www.weather.gov/safety/thunderstorm-prepare">https://www.weather.gov/safety/thunderstorm-prepare</a></li>
+          
+        </ul>
+      </div>
+    </footer>
+  <!--Scripts--> 
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApSDX7puySzoOcmr0aloXLqOnzvNT47Q8
+  "></script>
+  <script src="javascript/apps.js"></script>
+</body>
+
+</html>
